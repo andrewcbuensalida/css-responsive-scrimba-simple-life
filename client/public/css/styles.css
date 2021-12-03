@@ -3,7 +3,9 @@
 font-family: 'Lora', serif;
 font-family: 'Ubuntu', sans-serif;
 */
-
+* {
+	box-sizing: border-box;
+}
 body {
 	margin: 0;
 	font-family: "Ubuntu", sans-serif;
