@@ -9,36 +9,24 @@
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="./css/styles.css" />
-		<!-- this is for auto reload during development -->
+		<!-- this is for auto reload during development. wont work if changing a file that jquery is loading-->
 		<script
 			type="text/javascript"
 			src="https://livejs.com/live.js"
 		></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<title>Home</title>
 	</head>
 	<body>
-		<header>
-			<div class="container container-flex">
-				<div class="site-title">
-					<h1>Living the social life</h1>
-					<p class="subtitle">A blog exploring minimalism in life</p>
-				</div>
-				<nav>
-					<ul>
-						<li>
-							<a class="current-page" href="index.html">Home</a>
-						</li>
-						<li><a href="about-me.html">About me</a></li>
-						<li><a href="recent-posts.html">Recent posts</a></li>
-					</ul>
-				</nav>
-			</div>
-			<!-- / .container -->
-		</header>
-
+		<header></header>
 		<div class="container container-flex">
 			<main role="main">
 				<article class="article-featured">
-					<h2 class="article-title">Finding simplicity in life</h2>
+					<h2 class="article-title">
+						The articles below are rendered dynamically with
+						Javascript createElement
+					</h2>
 					<img
 						src="./img/life.jpg"
 						alt="simple white desk on a white wall with a plant on the far right side"
@@ -46,12 +34,12 @@
 					/>
 					<p class="article-info">Fri Nov 19 2021</p>
 					<p class="article-body">
-						<strong>Life can get complicated really quickly</strong
+						<strong>Life can get restrictive really quickly</strong
 						>, but it doesn't have to be! There are many ways to
-						simplify your life,
+						have work-life balance in your life,
 						<a href="#">a few of which we've explored in the past</a
 						>. This week we're taking a bit of a approach though, in
-						how you can find simplicity in the life you already
+						how you can find flexibility in the life you're already
 						living.
 					</p>
 					<a href="#" class="article-read-more">CONTINUE READING</a>
@@ -59,59 +47,49 @@
 			</main>
 
 			<aside class="sidebar">
-				<div class="sidebar-widget">
-					<h2 class="widget-title">ABOUT ME</h2>
-					<img
-						src="./img/about-me.jpg"
-						alt="john doe"
-						class="widget-image"
-					/>
-					<p class="widget-body">
-						I find life better, and I'm happier, when things are
-						nice and simple.
-					</p>
-				</div>
-
-				<div class="sidebar-widget">
-					<h2 class="widget-title">RECENT POSTS</h2>
-					<div class="widget-recent-post">
-						<h3 class="widget-recent-post-title">
-							Keeping cooking simple
-						</h3>
-						<img
-							src="./img/food.jpg"
-							alt="two dumplings on a wood plate with chopsticks"
-							class="widget-image"
-						/>
+				<div class="sidebar-widget"></div>
+				<template id="template-sidebar-widget">
+					<div class="sidebar-widget">
+						<h2 class="widget-title">
+							This component is rendered condictionally with a
+							template tag
+						</h2>
+						<div class="widget-recent-post">
+							<h3 class="widget-recent-post-title">
+								Keeping cooking flexible
+							</h3>
+							<img
+								src="./img/food.jpg"
+								alt="two dumplings on a wood plate with chopsticks"
+								class="widget-image"
+							/>
+						</div>
+						<div class="widget-recent-post">
+							<h3 class="widget-recent-post-title">
+								Flexibility and work
+							</h3>
+							<img
+								src="./img/work.jpg"
+								alt="a chair white chair at a white desk on a white wall"
+								class="widget-image"
+							/>
+						</div>
+						<div class="widget-recent-post">
+							<h3 class="widget-recent-post-title">
+								Flexible decorations
+							</h3>
+							<img
+								src="./img/deco.jpg"
+								alt="a green plant in a clear, round vase with water in it"
+								class="widget-image"
+							/>
+						</div>
 					</div>
-					<div class="widget-recent-post">
-						<h3 class="widget-recent-post-title">
-							Simplicity and work
-						</h3>
-						<img
-							src="./img/work.jpg"
-							alt="a chair white chair at a white desk on a white wall"
-							class="widget-image"
-						/>
-					</div>
-					<div class="widget-recent-post">
-						<h3 class="widget-recent-post-title">
-							Simple decorations
-						</h3>
-						<img
-							src="./img/deco.jpg"
-							alt="a green plant in a clear, round vase with water in it"
-							class="widget-image"
-						/>
-					</div>
-				</div>
+				</template>
 			</aside>
 		</div>
 
-		<footer>
-			<p><strong>Living the Simple Life</strong></p>
-			<p>Copyright 2022</p>
-		</footer>
+		<footer></footer>
 		<script src="index.js"></script>
 	</body>
 </html>

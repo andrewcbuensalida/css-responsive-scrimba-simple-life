@@ -31,12 +31,16 @@ media query==================================================================
 make media queries based on when the layout breaks, not based on device screen sizes.
 if doing mobile first,
 @media (min-width:650px){
+
 <!-- desktop styling -->
+
 }
 note that the bigger min-width is below smaller one to work
 if doing desktop first, do this below the desktop styling. media queries always after the selector that you want to change.
 @media (max-width:675px){
+
 <!-- mobile styling -->
+
 .column{
 flex-direction:column
 }
@@ -285,3 +289,12 @@ textareas can have resize:none;
 i kind of llike flexbox better than grid.
 
 deploy simple life website flex, barbeque signup flex, 7 tech tips flex version, jake elwood grid.
+
+dynamically rendering ==========================================
+ways:
+ssr like handlebars, ejs
+react
+innerHtml injection from javascript
+element creation with javascript
+conditional rendering with template tags
+jquery load from a different html file
