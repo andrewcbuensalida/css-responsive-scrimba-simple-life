@@ -305,10 +305,10 @@ create record flex.anhonestobserver.com A record with value 34.102.120.157 which
 sudo nano /etc/nginx/sites-available/flex.anhonestobserver.com.conf
 server {
 listen 80;
-server_name starwars.anhonestobserver.com www.starwars.anhonestobserver.com;
+server_name flex.anhonestobserver.com www.flex.anhonestobserver.com;
 
     location / {
-        proxy_pass http://localhost:5000/;
+        proxy_pass http://localhost:3100/;
         proxy_http_version 1.1;
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection 'upgrade';
@@ -331,3 +331,18 @@ ss -tnlp | grep "node /" to see what ports pm2 processes are running on.
 to check logs , pm2 logs flex --timestamp
 
 workflow is since it's gcp compute engine, it requires docker to auto deploy. right now i dont have that. so just push to github. then pull from compute engine.
+
+
+
+
+
+trying without node. it works, but i forgot that we're getting the articles dynamically, even if it's hard coded. so have to switch back to serving with node. could do without node if there are no secret key apis that node needs to fetch.
+server {
+    server_name flex.anhonestobserver.com www.flex.anhonestobserver.com;
+    root /home/andrewcbuensalida_gmail_com/flex/client/public;;
+    index index.html index.htm index.nginx-debian.html;
+    location / {
+        try_files $uri /index.html;
+    }
+
+}
